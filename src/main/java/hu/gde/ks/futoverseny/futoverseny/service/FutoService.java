@@ -11,4 +11,8 @@ public interface FutoService {
     List<FutoDto> findAllFuto();
 
     Futo saveFuto(Futo futo);
+
+    FutoDto findFutoById(long futoId);
+
+    void updateFuto(FutoDto futo);
 }

@@ -8,17 +8,15 @@
 </head>
 <body>
 <nav>
-    <a th:href="@{/futok/new}">Uj futo</a>
-    <a th:href="@{/futok}">Futok listazasa</a>
+    <a th:href="@{/versenyek/new}">Verseny letrehozasa</a>
+    <a th:href="@{/versenyek}">Versenyek listazasa</a>
 </nav>
 
-<form role="form" method="post" th:action="@{/futok/new}" th:object="${futo}">
+<form role="form" method="post" th:action="@{/verseny/new}" th:object="${verseny}">
     <label for="name">Nev</label>
     <input id="name" type="text" name="name" th:field="*{name}"/>
-    <label for="age">Kor</label>
-    <input id="age" type="number" name="age" th:field="*{age}"/>
-    <label for="gender">Nem</label>
-    <input id="gender" type="text" name="gender" th:field="*{gender}"/>
+    <label for="distance">Tavolsag</label>
+    <input id="distance" type="number" name="distance" th:field="*{distance}"/>
     <button type="submit">Mentes</button>
 </form>
 </body>

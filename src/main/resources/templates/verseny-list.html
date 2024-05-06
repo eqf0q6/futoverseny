@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet"/>
+    <title>Title</title>
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/versenyek/new}">Verseny letrehozasa</a>
+    <a th:href="@{/versenyek}">Versenyek listazasa</a>
+</nav>
+
+<div>Versenyek</div>
+
+
+<div th:each="verseny :${versenyek}">
+
+    <div class="futo-list">
+        <div th:text="${verseny.name}"></div>
+        <div th:text="${verseny.distance}"></div>
+
+        <a class="link" th:href="@{/verseny/{versenyId}(versenyId=${verseny.id})}">Eddigi eredmenyek</a>
+    </div>
+
+</div>
+</body>
+</html>

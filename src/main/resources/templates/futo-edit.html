@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link th:href="@{/styles/main.css}" rel="stylesheet" />
-    <title>Title</title>
+    <title>Futo edit</title>
 </head>
 <body>
 <nav>
@@ -12,7 +12,8 @@
     <a th:href="@{/futok}">Futok listazasa</a>
 </nav>
 
-<form role="form" method="post" th:action="@{/futok/new}" th:object="${futo}">
+<form role="form" method="post" th:action="@{/futok/{futoId}/edit(futoId=${futo.id})}" th:object="${futo}">
+    <input type="hidden" th:field="*{id}">
     <label for="name">Nev</label>
     <input id="name" type="text" name="name" th:field="*{name}"/>
     <label for="age">Kor</label>

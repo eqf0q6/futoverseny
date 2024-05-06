@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -38,6 +39,20 @@ public class FutoController {
     @PostMapping("/futok/new")
     public String saveFuto(@ModelAttribute("futo") Futo futo){
         futoService.saveFuto(futo);
+        return "redirect:/futok";
+    }
+
+    @GetMapping("/futok/{futoId}/edit")
+    public String editFutoForm(@PathVariable("futoId") long futoId, Model model){
+        FutoDto futo = futoService.findFutoById(futoId);
+        model.addAttribute("futo", futo);
+        return "futo-edit";
+    }
+
+    @PostMapping("/futok/{futoId}/edit")
+    public String updateFuto(@PathVariable("futoId")long futoId, @ModelAttribute("futo") FutoDto futo){
+        futo.setId(futoId);
+        futoService.updateFuto(futo);
         return "redirect:/futok";
     }
 }
