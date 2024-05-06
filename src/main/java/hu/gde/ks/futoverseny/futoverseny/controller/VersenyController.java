@@ -41,18 +41,4 @@ public class VersenyController {
         versenyService.saveVerseny(verseny);
         return "redirect:/versenyek";
     }
-//
-//    @GetMapping("/futok/{futoId}/edit")
-//    public String editFutoForm(@PathVariable("futoId") long futoId, Model model){
-//        FutoDto futo = futoService.findFutoById(futoId);
-//        model.addAttribute("futo", futo);
-//        return "futo-edit";
-//    }
-//
-//    @PostMapping("/futok/{futoId}/edit")
-//    public String updateFuto(@PathVariable("futoId")long futoId, @ModelAttribute("futo") FutoDto futo){
-//        futo.setId(futoId);
-//        futoService.updateFuto(futo);
-//        return "redirect:/futok";
-//    }
 }

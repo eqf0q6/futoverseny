@@ -30,30 +30,8 @@ public class FutoRestController {
 
     }
 
-//    @GetMapping("/futok/new")
-//    public String createFutoForm(Model model){
-//        Futo futo = new Futo();
-//        model.addAttribute("futo", futo);
-//        return "futo-create";
-//    }
-//
-//    @PostMapping("/futok/new")
-//    public String saveFuto(@ModelAttribute("futo") Futo futo){
-//        futoService.saveFuto(futo);
-//        return "redirect:/futok";
-//    }
-
-
     @PostMapping(path = "/addRunner", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> addEmployee(
-//            @RequestHeader(name = "X-COM-PERSIST", required = true) String headerPersist,
-//            @RequestHeader(name = "X-COM-LOCATION", required = false, defaultValue = "ASIA") String headerLocation,
-            @RequestBody Futo futo
-    ) throws Exception {
-
-        //validate the employee data if required
-
-        System.out.println("created futo" + futo);
+    public ResponseEntity<Object> addEmployee(@RequestBody Futo futo) throws Exception {
 
         //add resource to database
         Futo createdFuto = futoService.saveFuto(futo);
@@ -66,19 +44,4 @@ public class FutoRestController {
 
         return ResponseEntity.created(location).build();
     }
-
-//
-//    @GetMapping("/futok/{futoId}/edit")
-//    public String editFutoForm(@PathVariable("futoId") long futoId, Model model){
-//        FutoDto futo = futoService.findFutoById(futoId);
-//        model.addAttribute("futo", futo);
-//        return "futo-edit";
-//    }
-//
-//    @PostMapping("/futok/{futoId}/edit")
-//    public String updateFuto(@PathVariable("futoId")long futoId, @ModelAttribute("futo") FutoDto futo){
-//        futo.setId(futoId);
-//        futoService.updateFuto(futo);
-//        return "redirect:/futok";
-//    }
 }
