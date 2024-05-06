@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <a th:href="@{/futok/new}">Uj futo</a>
+    <a th:href="@{/futok}">Futok listazasa</a>
+</nav>
+
+<form role="form" method="post" th:action="@{/futok/new}" th:object="${futo}">
+    <label for="name">Nev</label>
+    <input id="name" type="text" name="name" th:field="*{name}"/>
+    <label for="age">Kor</label>
+    <input id="age" type="number" name="age" th:field="*{age}"/>
+    <label for="gender">Nem</label>
+    <input id="gender" type="text" name="gender" th:field="*{gender}"/>
+    <button type="submit">Mentes</button>
+</form>
+</body>
+</html>

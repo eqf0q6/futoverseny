@@ -5,12 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Futok</h1>
+
+<nav>
+    <a th:href="@{/futok/new}">Uj futo</a>
+    <a th:href="@{/futok}">Futok listazasa</a>
+</nav>
+
 <div th:each="futo :${futok}">
 
     <div th:text="${futo.name}"></div>
     <div th:text="${futo.age}"></div>
     <div th:text="${futo.gender}"></div>
+
 </div>
 </body>
 </html>

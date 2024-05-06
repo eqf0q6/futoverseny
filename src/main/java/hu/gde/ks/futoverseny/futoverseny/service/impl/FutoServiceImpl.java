@@ -25,6 +25,11 @@ public class FutoServiceImpl implements FutoService {
         return futok.stream().map(futo -> mapToFutoDto(futo)).collect(Collectors.toList());
     }
 
+    @Override
+    public Futo saveFuto(Futo futo) {
+        return futoRepository.save(futo);
+    }
+
     public FutoDto mapToFutoDto(Futo futo) {
         FutoDto futoDto = FutoDto.builder()
                 .id(futo.getId())
