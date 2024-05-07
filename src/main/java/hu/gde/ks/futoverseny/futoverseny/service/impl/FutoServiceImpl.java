@@ -27,31 +27,9 @@ public class FutoServiceImpl implements FutoService {
 
     @Override
     public Futo saveFuto(Futo futo) {
-        System.out.println("futo from service"+futo);
         return futoRepository.save(futo);
     }
 
-    @Override
-    public FutoDto findFutoById(long futoId) {
-        Futo futo = futoRepository.findById(futoId).get();
-        return mapToFutoDto(futo);
-    }
-
-    @Override
-    public void updateFuto(FutoDto futoDto) {
-        Futo futo = mapToFuto(futoDto);
-        futoRepository.save(futo);
-    }
-
-    private Futo mapToFuto(FutoDto futoDto) {
-        Futo futo = Futo.builder()
-                .id(futoDto.getId())
-                .name(futoDto.getName())
-                .gender(futoDto.getGender())
-                .age(futoDto.getAge())
-                .build();
-        return futo;
-    }
 
     public FutoDto mapToFutoDto(Futo futo) {
         FutoDto futoDto = FutoDto.builder()

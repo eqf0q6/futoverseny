@@ -26,7 +26,6 @@ public class VersenyController {
     public String listVersenyek(Model model) {
         List<VersenyDto> versenyek = versenyService.findAllVerseny();
         model.addAttribute("versenyek", versenyek);
-        System.out.println("XXXX" + versenyek);
         return "verseny-list";
     }
 

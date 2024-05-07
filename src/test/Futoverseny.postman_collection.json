@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "68011afc-75fd-4fe1-a2ac-1cee93f4135a",
+		"name": "Futoverseny",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5396221"
+	},
+	"item": [
+		{
+			"name": "Add new runner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Toni\",\n    \"age\": 54,\n    \"gender\": \"F\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addRunner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addRunner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all runners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getRunners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getRunners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get average time by versenyID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getAverageTime/200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAverageTime",
+						"200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get runners of race, sorted by eredmeny",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getRaceRunners/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getRaceRunners",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"eredmeny\": 30,\n   \"resztvevo\": {\n    \"id\": 100\n   },\n   \"verseny\": {\n    \"id\": 100\n   }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addResult",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addResult"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update race",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"eredmeny\": 30,\n   \"resztvevo\": {\n    \"id\": 100\n   },\n   \"verseny\": {\n    \"id\": 100\n   }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addResult",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addResult"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

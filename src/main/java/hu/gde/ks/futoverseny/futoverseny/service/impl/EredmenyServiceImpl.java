@@ -19,12 +19,6 @@ public class EredmenyServiceImpl implements EredmenyService {
         this.eredmenyRepository = eredmenyRepository;
     }
 
-//    @Override
-//    public List<FutoDto> findAllFuto() {
-//        List<Futo> futok = futoRepository.findAll();
-//        return futok.stream().map(futo -> mapToFutoDto(futo)).collect(Collectors.toList());
-//    }
-
     @Override
     public List<EredmenyDto> findAllEredmenyByVersenyId(long versenyId) {
         List<Eredmeny> eredmenyek = eredmenyRepository.findAll();
@@ -32,31 +26,9 @@ public class EredmenyServiceImpl implements EredmenyService {
         return eredmenyek.stream().map(eredmeny -> mapEredmenyToEredmenyDto(eredmeny)).collect(Collectors.toList());
     }
 
-//    @Override
-//    public Futo saveFuto(Futo futo) {
-//        return futoRepository.save(futo);
-//    }
-//
-//    @Override
-//    public FutoDto findFutoById(long futoId) {
-//        Futo futo = futoRepository.findById(futoId).get();
-//        return mapToFutoDto(futo);
-//    }
-//
-//    @Override
-//    public void updateFuto(FutoDto futoDto) {
-//        Futo futo = mapToClub(futoDto);
-//        futoRepository.save(futo);
-//    }
-
-    private Eredmeny mapToEredmeny(EredmenyDto eredmenyDto) {
-        Eredmeny eredmeny = Eredmeny.builder()
-                .id(eredmenyDto.getId())
-                .verseny(eredmenyDto.getVerseny())
-                .resztvevo(eredmenyDto.getResztvevo())
-                .eredmeny(eredmenyDto.getEredmeny())
-                .build();
-        return eredmeny;
+    @Override
+    public Eredmeny saveEredmeny(Eredmeny eredmeny) {
+        return eredmenyRepository.save(eredmeny);
     }
 
     public EredmenyDto mapEredmenyToEredmenyDto(Eredmeny eredmeny) {

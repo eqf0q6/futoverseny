@@ -1,4 +1,4 @@
-package hu.gde.ks.futoverseny.futoverseny.controller;
+package hu.gde.ks.futoverseny.futoverseny.controller.rest;
 
 import hu.gde.ks.futoverseny.futoverseny.dto.FutoDto;
 import hu.gde.ks.futoverseny.futoverseny.models.Futo;

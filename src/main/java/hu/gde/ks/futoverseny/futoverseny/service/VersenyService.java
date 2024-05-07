@@ -11,7 +11,4 @@ public interface VersenyService {
 
     Verseny saveVerseny(Verseny verseny);
 
-    VersenyDto findVersenyById(long versenyId);
-//
-//    void updateFuto(FutoDto futo);
 }
