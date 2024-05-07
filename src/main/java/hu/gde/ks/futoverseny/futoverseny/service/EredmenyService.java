@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public interface EredmenyService {
-    List<EredmenyDto> findAllEredmeny();
+    List<EredmenyDto> findAllEredmenyByVersenyId(long versenyId);
 
 //    Futo saveFuto(Futo futo);
 //

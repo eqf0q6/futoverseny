@@ -37,13 +37,15 @@ public class VersenyServiceImpl implements VersenyService {
     public Verseny saveVerseny(Verseny verseny) {
         return versenyRepository.save(verseny);
     }
+
+
 //
-//    @Override
-//    public FutoDto findFutoById(long futoId) {
-//        Futo futo = futoRepository.findById(futoId).get();
-//        return mapToFutoDto(futo);
-//    }
-//
+    @Override
+    public VersenyDto findVersenyById(long versenyId) {
+        Verseny verseny = versenyRepository.findById(versenyId).get();
+        return mapVersenyToVersenyDto(verseny);
+    }
+
 //    @Override
 //    public void updateFuto(FutoDto futoDto) {
 //        Futo futo = mapToClub(futoDto);

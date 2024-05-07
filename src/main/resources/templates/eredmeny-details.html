@@ -15,12 +15,9 @@
 <h1>Versenyek</h1>
 
 <div class="list">
-    <div th:each="verseny :${versenyek}" class="row">
-        <div th:text="${verseny.name}"></div>
-        <div th:text="${verseny.distance} + ' km'"></div>
-        <div>
-            <a class="link" th:href="@{/eredmeny/{versenyId}(versenyId=${verseny.id})}">Eddigi eredmenyek</a>
-        </div>
+    <div th:each="eredmeny :${eredmenyek}" class="row">
+        <div th:text="${eredmeny.resztvevo.name}"></div>
+        <div th:text="${eredmeny.eredmeny}+' perc'">perc</div>
     </div>
 </div>
 

@@ -12,10 +12,6 @@ public class EredmenyDto {
 
     private Long id;
     private Integer eredmeny;
-
-
     private Futo resztvevo;
-
-
     private Verseny verseny;
 }

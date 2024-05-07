@@ -1,9 +1,7 @@
 package hu.gde.ks.futoverseny.futoverseny.service.impl;
 
 import hu.gde.ks.futoverseny.futoverseny.dto.EredmenyDto;
-import hu.gde.ks.futoverseny.futoverseny.dto.VersenyDto;
 import hu.gde.ks.futoverseny.futoverseny.models.Eredmeny;
-import hu.gde.ks.futoverseny.futoverseny.models.Verseny;
 import hu.gde.ks.futoverseny.futoverseny.repository.EredmenyRepository;
 import hu.gde.ks.futoverseny.futoverseny.service.EredmenyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +26,9 @@ public class EredmenyServiceImpl implements EredmenyService {
 //    }
 
     @Override
-    public List<EredmenyDto> findAllEredmeny() {
+    public List<EredmenyDto> findAllEredmenyByVersenyId(long versenyId) {
         List<Eredmeny> eredmenyek = eredmenyRepository.findAll();
+        eredmenyek = eredmenyek.stream().filter(eredmeny -> eredmeny.getVerseny().getId().equals(versenyId)).toList();
         return eredmenyek.stream().map(eredmeny -> mapEredmenyToEredmenyDto(eredmeny)).collect(Collectors.toList());
     }
 
@@ -50,7 +49,7 @@ public class EredmenyServiceImpl implements EredmenyService {
 //        futoRepository.save(futo);
 //    }
 
-    private Eredmeny mapToVerseny(EredmenyDto eredmenyDto) {
+    private Eredmeny mapToEredmeny(EredmenyDto eredmenyDto) {
         Eredmeny eredmeny = Eredmeny.builder()
                 .id(eredmenyDto.getId())
                 .verseny(eredmenyDto.getVerseny())

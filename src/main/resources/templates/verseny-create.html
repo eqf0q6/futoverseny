@@ -8,16 +8,22 @@
 </head>
 <body>
 <nav>
-    <a th:href="@{/versenyek/new}">Verseny letrehozasa</a>
-    <a th:href="@{/versenyek}">Versenyek listazasa</a>
+    <a th:href="@{/versenyek/new}">Verseny létrehozása</a>
+    <a th:href="@{/versenyek}">Versenyek listázása</a>
 </nav>
 
+<h1>Verseny létrehozása</h1>
+
 <form role="form" method="post" th:action="@{/verseny/new}" th:object="${verseny}">
-    <label for="name">Nev</label>
-    <input id="name" type="text" name="name" th:field="*{name}"/>
-    <label for="distance">Tavolsag</label>
-    <input id="distance" type="number" name="distance" th:field="*{distance}"/>
-    <button type="submit">Mentes</button>
+    <div>
+        <label for="name">Név: </label>
+        <input id="name" type="text" name="name" th:field="*{name}"/>
+    </div>
+    <div>
+        <label for="distance">Távolság: </label>
+        <input id="distance" type="number" name="distance" th:field="*{distance}"/>
+    </div>
+    <button type="submit">Mentés</button>
 </form>
 </body>
 </html>

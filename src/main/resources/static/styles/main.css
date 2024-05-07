@@ -1,6 +1,7 @@
 a {
-    color: red;
-    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 nav {
@@ -13,13 +14,51 @@ nav a {
     font-weight: bold;
     color: white;
     background-color: grey;
-    padding: 8px;
-    border: 1px solid black;
-    font-size: 24px;
+    padding: 16px;
+    border-radius: 18px;
+    font-size: 18px;
+    text-decoration: none;
+
 }
 
-.futo-list {
+nav a:hover {
+    background: #b0b7c2;
+    color: black;
+}
+
+.list {
     display: flex;
+    flex-direction: column;
     gap: 12px;
     font-size: 18px;
+}
+
+.list .row {
+    background: #b0b7c2;
+    padding: 12px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list .row div {
+    width: 150px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    gap: 8px;
+}
+
+form button {
+    width: 100px;
 }

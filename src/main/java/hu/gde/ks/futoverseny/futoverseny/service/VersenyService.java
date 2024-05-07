@@ -10,8 +10,8 @@ public interface VersenyService {
     List<VersenyDto> findAllVerseny();
 
     Verseny saveVerseny(Verseny verseny);
-//
-//    FutoDto findFutoById(long futoId);
+
+    VersenyDto findVersenyById(long versenyId);
 //
 //    void updateFuto(FutoDto futo);
 }
