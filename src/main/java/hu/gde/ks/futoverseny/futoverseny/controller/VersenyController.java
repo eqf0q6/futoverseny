@@ -22,7 +22,9 @@ public class VersenyController {
         this.versenyService = versenyService;
     }
 
-    @GetMapping("/versenyek")
+
+
+    @GetMapping(value= {"/versenyek", "/", ""})
     public String listVersenyek(Model model) {
         List<VersenyDto> versenyek = versenyService.findAllVerseny();
         model.addAttribute("versenyek", versenyek);
